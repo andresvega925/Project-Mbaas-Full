@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/home/andres/Documents/banco.wsdl" uri="src/conf/xml-resources/web-services/NewWebServiceFromWSDL/wsdl/banco.wsdl"/>
+    <system systemId="http://127.0.1.1:7001/WebServiceBanco/WebServiceBanco?xsd=1" uri="src/conf/xml-resources/web-services/NewWebServiceFromWSDL/wsdl/127.0.1.1_7001/WebServiceBanco/WebServiceBanco.xsd_1.xsd"/>
+    <system systemId="file:/home/andres/Documents/Project-Mbaas-Full/Contrato/BancoCoquimbo.wsdl" uri="src/conf/xml-resources/web-services/ServiceWebCreationsUsers/wsdl/BancoCoquimbo.wsdl"/>
+    <system systemId="file:/home/andres/Documents/Project-Mbaas-Full/Contrato/BancoCoquimbo.xsd" uri="src/conf/xml-resources/web-services/ServiceWebCreationsUsers/wsdl/BancoCoquimbo.xsd"/>
+</catalog>

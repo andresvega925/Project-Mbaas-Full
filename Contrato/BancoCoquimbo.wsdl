@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions
+	name="OpCreateUser"
+	targetNamespace="http://www.bancocoquimbo.com/xml/BancoCoquimbo"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://www.bancocoquimbo.com/xml/BancoCoquimbo"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<wsdl:types>
+		<xsd:schema>
+			<xsd:import namespace="http://www.bancocoquimbo.com/xml/BancoCoquimbo" schemaLocation="BancoCoquimbo.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+
+	<wsdl:message name="MsjSolOpCreateUser">
+		<wsdl:part name="request" element="tns:CreateUserRequest"/>
+	</wsdl:message>
+
+	<wsdl:message name="MsjResOpCreateUserResponse">
+		<wsdl:part name="response" element="tns:CreateUserResponse"/>
+	</wsdl:message>
+
+	<wsdl:portType name="BancoCoquimbo_portType">
+		<wsdl:operation name="OpCreateUser">
+			<wsdl:input message="tns:MsjSolOpCreateUser" name="BancoCoquimboInput"/>
+			<wsdl:output message="tns:MsjResOpCreateUserResponse" name="BancoCoquimboOutput"/>
+		</wsdl:operation>
+	</wsdl:portType>
+
+	<wsdl:binding name="BancoCoquimbo_HTTP_Binding" type="tns:BancoCoquimbo_portType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="OpCreateUser">
+			
+			<wsdl:input name="BancoCoquimboInput">
+				<soap:body parts="request" use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="BancoCoquimboOutput">
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+
+	<wsdl:service name="BancoCoquimbo_HTTP_Service">
+		<wsdl:port binding="tns:BancoCoquimbo_HTTP_Binding" name="BancoCoquimbo_Port">
+			<soap:address location="http://localhost/BancoCoquimbo"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

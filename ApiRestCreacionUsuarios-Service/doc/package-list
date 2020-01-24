@@ -1,0 +1,9 @@
+com.davivienda.api
+com.davivienda.api.configuration
+com.davivienda.api.controller
+com.davivienda.api.model
+com.davivienda.api.restclient
+com.davivienda.api.schemas.bancocoquimbo
+com.davivienda.api.schemas.loggerservice
+com.davivienda.api.service.util
+com.davivienda.api.soapclient

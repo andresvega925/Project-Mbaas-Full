@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	targetNamespace="http://www.bancocoquimbo.com/xml/BancoCoquimbo"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.bancocoquimbo.com/xml/BancoCoquimbo">
+
+	<xsd:complexType name="createUserRq">
+		<xsd:sequence>		
+			<xsd:element name="name"	type="xsd:string"/>
+			<xsd:element name="lasta_name"	type="xsd:string"/>
+			<xsd:element name="age"	type="xsd:int"/>
+			<xsd:element name="phone"	type="xsd:int"/>
+			<xsd:element name="dni"	type="xsd:int"/>			
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="CreateUserRequest" type="tns:createUserRq"/>
+	<!-- END Request CreateUser  -->
+
+	<xsd:complexType name="createUserRes">
+		<xsd:sequence>			
+			<xsd:element name="response"	type="xsd:int"/>
+			<xsd:element name="caracterAceptacion"	type="xsd:string"/>	
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="CreateUserResponse" type="tns:createUserRes"/>
+	<!-- END Response CreateUserResponse  -->
+</xsd:schema>

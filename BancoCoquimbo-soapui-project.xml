@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="59e2508b-4e04-4c7e-9c69-9991a4634c01" activeEnvironment="Default" name="BancoCoquimbo" resourceRoot="" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="7b8919a5-9208-4b10-8522-7c12888f8c0a" wsaVersion="NONE" name="BancoCoquimbo_HTTP_Binding" type="wsdl" bindingName="{http://www.bancocoquimbo.com/xml/BancoCoquimbo}BancoCoquimbo_HTTP_Binding" soapVersion="1_1" anonymous="optional" definition="file:/home/andres/Documents/Project-Mbaas-Full/ApiRestCreacionUsuarios-Service/src/main/resources/wsdl/BancoCoquimbo/BancoCoquimbo.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/home/andres/Documents/Project-Mbaas-Full/ApiRestCreacionUsuarios-Service/src/main/resources/wsdl/BancoCoquimbo/BancoCoquimbo.wsdl"><con:part><con:url>file:/home/andres/Documents/Project-Mbaas-Full/ApiRestCreacionUsuarios-Service/src/main/resources/wsdl/BancoCoquimbo/BancoCoquimbo.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="BancoCoquimbo" targetNamespace="http://www.bancocoquimbo.com/xml/BancoCoquimbo" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.bancocoquimbo.com/xml/BancoCoquimbo" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema>
+      <xsd:import namespace="http://www.bancocoquimbo.com/xml/BancoCoquimbo" schemaLocation="BancoCoquimbo.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="MsjSolOpCreateUser">
+    <wsdl:part name="request" element="tns:CreateUserRequest"/>
+  </wsdl:message>
+  <wsdl:message name="MsjResOpCreateUserResponse">
+    <wsdl:part name="response" element="tns:CreateUserResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="BancoCoquimbo_portType">
+    <wsdl:operation name="OpCreateUser">
+      <wsdl:input message="tns:MsjSolOpCreateUser" name="BancoCoquimboInput"/>
+      <wsdl:output message="tns:MsjResOpCreateUserResponse" name="BancoCoquimboOutput"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BancoCoquimbo_HTTP_Binding" type="tns:BancoCoquimbo_portType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="OpCreateUser">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="BancoCoquimboInput">
+        <soap:body parts="request" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="BancoCoquimboOutput">
+        <soap:body parts="response" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BancoCoquimbo_HTTP_Service">
+    <wsdl:port binding="tns:BancoCoquimbo_HTTP_Binding" name="BancoCoquimbo_Port">
+      <soap:address location="http://localhost/BancoCoquimbo"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:/home/andres/Documents/Project-Mbaas-Full/ApiRestCreacionUsuarios-Service/src/main/resources/wsdl/BancoCoquimbo/BancoCoquimbo.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.bancocoquimbo.com/xml/BancoCoquimbo" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.bancocoquimbo.com/xml/BancoCoquimbo">
+  <xsd:complexType name="createUserRq">
+    <xsd:sequence>
+      <xsd:element name="name" type="xsd:string"/>
+      <xsd:element name="lasta_name" type="xsd:string"/>
+      <xsd:element name="age" type="xsd:int"/>
+      <xsd:element name="phone" type="xsd:int"/>
+      <xsd:element name="dni" type="xsd:int"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="CreateUserRequest" type="tns:createUserRq"/>
+  <!--END Request CreateUser-->
+  <xsd:complexType name="createUserRes">
+    <xsd:sequence>
+      <xsd:element name="response" type="xsd:int"/>
+      <xsd:element name="caracterAceptacion" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="CreateUserResponse" type="tns:createUserRes"/>
+  <!--END Response CreateUserResponse-->
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://debian:8088/mockBancoCoquimbo_HTTP_Binding</con:endpoint><con:endpoint>http://localhost/BancoCoquimbo</con:endpoint></con:endpoints><con:operation id="64312472-de6d-4a2b-9534-87551d6031a7" isOneWay="false" action="" name="OpCreateUser" bindingOperationName="OpCreateUser" type="Request-Response" outputName="BancoCoquimboOutput" inputName="BancoCoquimboInput" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="14b9456a-8d22-4c28-9d33-769dded7218d" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.1.1:7001/BancoCoquimbo-war/BancoCoquimbo_HTTP_Service</con:endpoint><con:request><![CDATA[<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Header/>
+   <SOAP-ENV:Body>
+      <ns3:CreateUserRequest xmlns:ns3="http://www.bancocoquimbo.com/xml/BancoCoquimbo">
+         <name>Carolina</name>
+         <lastName>vega</lastName>
+         <age>21</age>
+         <phone>21</phone>
+         <dni>29</dni>
+      </ns3:CreateUserRequest>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.bancocoquimbo.com/xml/BancoCoquimbo/BancoCoquimbo_portType/BancoCoquimboInput"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService id="6880ddc8-ed62-4a93-b82b-d3e0bcc09d97" port="8088" path="/mockBancoCoquimbo_HTTP_Binding" host="debian" name="BancoCoquimbo_HTTP_Binding MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="OpCreateUser" id="0500fc9c-34cc-4fae-b792-34243102892d" interface="BancoCoquimbo_HTTP_Binding" operation="OpCreateUser"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="39792026-266e-4301-8502-8a2d590e81b8" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ban="http://www.bancocoquimbo.com/xml/BancoCoquimbo">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ban:CreateUserResponse>
+         <response>1</response>
+         <caracterAceptacion>B</caracterAceptacion>
+      </ban:CreateUserResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.bancocoquimbo.com/xml/BancoCoquimbo/BancoCoquimbo_portType/BancoCoquimboOutput"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
